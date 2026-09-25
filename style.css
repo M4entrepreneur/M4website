@@ -30,44 +30,48 @@ body {
 }
 
 
-/* MAIN PAGE */
+/* =========================
+   MAIN PAGE
+   ========================= */
 
 .page {
-  width: min(640px, calc(100% - 32px));
+  width: min(760px, calc(100% - 32px));
   margin: 0 auto;
   padding: 48px 0 60px;
 }
 
 
-/* BRAND */
+/* =========================
+   BRAND / LOGO
+   ========================= */
 
 .brand {
   text-align: center;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 }
 
 .m4-logo {
-  height: 95px;
-  line-height: 95px;
+  height: 100px;
+  line-height: 100px;
   letter-spacing: -16px;
   white-space: nowrap;
 }
 
 .m4-logo .m {
-  font-size: 105px;
+  font-size: 110px;
   font-weight: 700;
   color: var(--navy);
 }
 
 .m4-logo .four {
-  font-size: 100px;
+  font-size: 105px;
   font-weight: 700;
   color: var(--green);
   margin-left: -3px;
 }
 
 .wordmark {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: .27em;
   padding-left: .27em;
@@ -82,24 +86,31 @@ body {
 }
 
 
-/* LINK CARDS */
+/* =========================
+   HOMEPAGE CARDS
+   ========================= */
 
 .link-stack {
   display: grid;
-  gap: 11px;
+  gap: 12px;
 }
 
 .card {
-  min-height: 103px;
+  min-height: 112px;
   border-radius: 14px;
+
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) 42px;
+  grid-template-columns: 64px minmax(0, 1fr) 44px;
   align-items: center;
-  gap: 13px;
-  padding: 17px 16px;
+
+  gap: 16px;
+  padding: 20px;
+
   color: var(--text);
   text-decoration: none;
+
   border: 1px solid transparent;
+
   transition:
     transform .15s ease,
     box-shadow .15s ease;
@@ -110,20 +121,27 @@ a.card:hover {
   box-shadow: 0 7px 18px rgba(4, 52, 77, .10);
 }
 
+
+/* ICONS */
+
 .icon {
   display: grid;
   place-items: center;
 }
 
 .icon svg {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
+
   fill: none;
   stroke: currentColor;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+
+/* CARD TEXT */
 
 .text {
   display: flex;
@@ -132,38 +150,47 @@ a.card:hover {
 }
 
 .text small {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: .11em;
   margin-bottom: 5px;
 }
 
 .text strong {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.12;
   font-weight: 700;
 }
 
 .subtitle {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.25;
   font-weight: 600;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
+
+/* ARROW */
+
 .arrow {
-  width: 39px;
-  height: 39px;
+  width: 40px;
+  height: 40px;
+
   border-radius: 50%;
+
   display: grid;
   place-items: center;
-  background: rgba(255,255,255,.78);
+
+  background: rgba(255,255,255,.82);
+
   font-size: 27px;
   line-height: 1;
 }
 
 
-/* INDIVIDUAL CARD COLORS */
+/* =========================
+   INDIVIDUAL CARD COLORS
+   ========================= */
 
 .card-about {
   background: var(--about-soft);
@@ -198,20 +225,25 @@ a.card:hover {
 }
 
 
-/* ABOUT PAGE */
+/* =========================
+   ABOUT PAGE
+   ========================= */
 
 .about-page {
-  width: min(920px, calc(100% - 32px));
+  width: min(1000px, calc(100% - 32px));
   margin: 0 auto;
   padding: 32px 0 60px;
 }
 
 .back-link {
   display: inline-block;
+
   color: var(--navy);
   text-decoration: none;
+
   font-size: 13px;
   font-weight: 700;
+
   margin-bottom: 10px;
 }
 
@@ -219,40 +251,54 @@ a.card:hover {
   margin-bottom: 24px;
 }
 
+
+/* ABOUT CARD */
+
 .about-card {
   background: var(--white);
+
   border: 1px solid var(--border);
   border-radius: 14px;
+
   display: grid;
-  grid-template-columns: 330px 1fr;
-  gap: 26px;
-  padding: 18px;
+  grid-template-columns: 330px minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: 30px;
+  padding: 20px;
 }
+
+
+/* ABOUT PHOTO */
 
 .photo-frame {
   width: 100%;
-  min-height: 330px;
+  align-self: start;
+
   border-radius: 11px;
   overflow: hidden;
+
   background: #e8eceb;
   position: relative;
 }
 
 .photo-frame img {
   width: 100%;
-  height: 330px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 .photo-placeholder {
-  position: absolute;
-  inset: 0;
+  min-height: 330px;
+
   display: none;
   place-items: center;
   align-content: center;
+
   text-align: center;
   gap: 4px;
+
   color: var(--navy);
 }
 
@@ -264,6 +310,9 @@ a.card:hover {
   font-size: 12px;
 }
 
+
+/* ABOUT COPY */
+
 .about-copy {
   padding: 3px 2px 2px;
 }
@@ -271,8 +320,10 @@ a.card:hover {
 .about-copy h1 {
   font-size: 26px;
   line-height: 1.15;
+
   margin: 0 0 20px;
   padding-bottom: 14px;
+
   border-bottom: 2px solid var(--green);
 }
 
@@ -283,6 +334,7 @@ a.card:hover {
 .about-copy p {
   font-size: 17px;
   line-height: 1.55;
+
   margin: 0 0 18px;
 }
 
@@ -291,13 +343,19 @@ a.card:hover {
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 700px) {
 
   .page {
     width: calc(100% - 24px);
-    padding-top: 32px;
+    padding: 32px 0 44px;
+  }
+
+  .brand {
+    margin-bottom: 25px;
   }
 
   .m4-logo {
@@ -317,9 +375,15 @@ a.card:hover {
     font-size: 17px;
   }
 
+
+  /* MOBILE CARDS */
+
   .card {
     min-height: 96px;
-    grid-template-columns: 48px minmax(0, 1fr) 38px;
+
+    grid-template-columns:
+      48px minmax(0, 1fr) 38px;
+
     padding: 15px 12px;
     gap: 10px;
   }
@@ -327,6 +391,10 @@ a.card:hover {
   .icon svg {
     width: 37px;
     height: 37px;
+  }
+
+  .text small {
+    font-size: 11px;
   }
 
   .text strong {
@@ -343,6 +411,9 @@ a.card:hover {
     font-size: 23px;
   }
 
+
+  /* MOBILE ABOUT */
+
   .about-page {
     width: calc(100% - 24px);
     padding: 22px 0 44px;
@@ -350,18 +421,20 @@ a.card:hover {
 
   .about-card {
     grid-template-columns: 1fr;
+
     gap: 20px;
     padding: 15px;
   }
 
   .photo-frame {
-    min-height: auto;
+    width: 100%;
   }
 
   .photo-frame img {
+    width: 100%;
     height: auto;
-    max-height: 470px;
-    object-fit: cover;
+    max-height: 520px;
+    object-fit: contain;
   }
 
   .about-copy h1 {
@@ -376,28 +449,31 @@ a.card:hover {
 }
 
 
+/* EXTRA SMALL PHONES */
+
 @media (max-width: 390px) {
 
   .card {
-    grid-template-columns: 40px minmax(0, 1fr) 36px;
+    grid-template-columns:
+      40px minmax(0, 1fr) 36px;
   }
 
   .icon svg {
-    width: 37px;
-    height: 37px;
+    width: 35px;
+    height: 35px;
   }
 
   .text strong {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .subtitle {
-    font-size: 11.5px;
+    font-size: 11px;
   }
 
   .arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 23px;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
   }
 }
