@@ -1,100 +1,403 @@
-*{box-sizing:border-box}
-:root{
-  --ivory:#fbf9f3;
-  --navy:#073653;
-  --navy2:#084766;
-  --blue:#dcecf3;
-  --green:#b8d8c8;
-  --teal:#08635d;
-  --mint:#68aa92;
+:root {
+  --cream: #f7f5ef;
+  --navy: #063f5c;
+  --navy-deep: #04344d;
+  --green: #77b69e;
+  --green-soft: #b7d9ca;
+  --teal: #4f9487;
+  --blue-soft: #d6e9f2;
+  --about-soft: #edf3f4;
+  --text: #073b5a;
+  --white: #ffffff;
+  --border: #d7d7d2;
 }
-html,body{margin:0;min-height:100%}
-body{background:var(--ivory);color:var(--navy);font-family:"DM Sans",Arial,sans-serif}
-.page{width:min(920px,calc(100% - 44px));margin:0 auto;padding:42px 0 72px}
-.brand{text-align:center;margin:0 0 35px}
-.m4-logo{height:145px;display:flex;align-items:center;justify-content:center;font-weight:700;line-height:.8;letter-spacing:-24px}
-.m4-logo .m{font-size:158px;color:var(--navy)}
-.m4-logo .four{font-size:151px;color:var(--mint);margin-left:-6px}
-.wordmark{font-size:31px;font-weight:500;letter-spacing:.31em;padding-left:.31em;margin-top:10px}
-.rule{width:90px;height:3px;background:var(--mint);margin:25px auto 0}
-.link-stack{display:grid;gap:16px}
-.card{
-  min-height:146px;
-  border-radius:17px;
-  display:grid;
-  grid-template-columns:120px minmax(0,1fr) 64px;
-  align-items:center;
-  gap:24px;
-  padding:25px 34px;
-  text-decoration:none;
-  color:var(--navy);
+
+* {
+  box-sizing: border-box;
 }
-a.card{transition:transform .15s ease,box-shadow .15s ease}
-a.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(7,54,83,.10)}
-.card-navy{background:linear-gradient(115deg,var(--navy),var(--navy2));color:#fff}
-.card-blue{background:var(--blue)}
-.card-green{background:var(--green)}
-.card-white{background:#fff;border:1px solid #dedbd3}
-.card-teal{background:linear-gradient(115deg,#075b56,var(--teal));color:#fff}
-.icon{display:grid;place-items:center}
-.icon svg{width:67px;height:67px;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
-.text{display:flex;flex-direction:column;justify-content:center}
-.text small{font-size:18px;line-height:1.1;font-weight:700;letter-spacing:.13em;margin-bottom:8px}
-.text strong{font-size:30px;line-height:1.12;font-weight:700;letter-spacing:.015em}
-.subtitle{font-size:21px;line-height:1.15;font-weight:600;margin-top:5px}
-.arrow{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:rgba(251,249,243,.97);color:var(--navy);font-size:38px;line-height:1;font-weight:500}
 
-/* About page */
-.about-page{width:min(980px,calc(100% - 44px));margin:0 auto;padding:34px 0 70px}
-.back-link{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.08em;text-decoration:none;color:var(--navy);margin-bottom:4px}
-.about-brand{margin-bottom:32px}
-.about-card{background:#fff;border:1px solid #dedbd3;border-radius:18px;padding:34px;display:grid;grid-template-columns:minmax(250px, .8fr) 1.2fr;gap:42px;align-items:center}
-.photo-frame{min-height:390px;border-radius:14px;overflow:hidden;background:var(--blue);position:relative}
-.photo-frame img{width:100%;height:390px;object-fit:cover;display:block}
-.photo-placeholder{position:absolute;inset:0;display:none;place-items:center;align-content:center;gap:5px;text-align:center;color:var(--navy)}
-.photo-placeholder span{font-size:22px;font-weight:700;letter-spacing:.08em}
-.photo-placeholder small{font-size:14px}
-.about-copy h1{margin:0 0 28px;font-size:34px;line-height:1.1}
-.blank-copy{min-height:210px;border-top:3px solid var(--mint);padding-top:22px}
-.blank-copy p{margin:0;color:#6c7d84;font-size:17px}
-
-@media(max-width:650px){
-  .page{width:calc(100% - 24px);padding:28px 0 44px}
-  .brand{margin-bottom:26px}
-  .m4-logo{height:95px;letter-spacing:-16px}
-  .m4-logo .m{font-size:105px}
-  .m4-logo .four{font-size:100px;margin-left:-3px}
-  .wordmark{font-size:19px;letter-spacing:.27em;padding-left:.27em;margin-top:8px}
-  .rule{width:62px;margin-top:17px}
-  .link-stack{gap:11px}
-  .card{min-height:103px;border-radius:14px;grid-template-columns:58px minmax(0,1fr) 42px;gap:13px;padding:17px 16px}
-  .icon svg{width:42px;height:42px;stroke-width:3}
-  .text small{font-size:12px;margin-bottom:5px}
-  .text strong{font-size:18px}
-  .subtitle{font-size:13px;margin-top:3px}
-  .arrow{width:39px;height:39px;font-size:27px}
-
-  .about-page{width:calc(100% - 24px);padding:22px 0 44px}
-  .about-card{grid-template-columns:1fr;gap:26px;padding:18px}
-  .photo-frame{min-height:330px}
-  .photo-frame img{height:330px}
-  .about-copy h1{font-size:26px;margin-bottom:20px}
-  .blank-copy{min-height:160px}
+html {
+  margin: 0;
+  padding: 0;
 }
-@media(max-width:390px){
-  .card{grid-template-columns:48px minmax(0,1fr) 36px;padding:15px 12px;gap:10px}
-  .icon svg{width:37px;height:37px}
-  .text strong{font-size:16px}
-  .subtitle{font-size:11.5px}
-  .arrow{width:34px;height:34px;font-size:23px}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+
+/* MAIN PAGE */
+
+.page {
+  width: min(640px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 60px;
+}
+
+
+/* BRAND */
+
+.brand {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.m4-logo {
+  height: 95px;
+  line-height: 95px;
+  letter-spacing: -16px;
+  white-space: nowrap;
+}
+
+.m4-logo .m {
+  font-size: 105px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.m4-logo .four {
+  font-size: 100px;
+  font-weight: 700;
+  color: var(--green);
+  margin-left: -3px;
+}
+
+.wordmark {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: .27em;
+  padding-left: .27em;
+  margin-top: 8px;
+}
+
+.rule {
+  width: 62px;
+  height: 2px;
+  background: var(--green);
+  margin: 17px auto 0;
+}
+
+
+/* LINK CARDS */
+
+.link-stack {
+  display: grid;
+  gap: 11px;
+}
+
+.card {
+  min-height: 103px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 16px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+a.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(4, 52, 77, .10);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+}
+
+.icon svg {
+  width: 42px;
+  height: 42px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text small {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .11em;
+  margin-bottom: 5px;
+}
+
+.text strong {
+  font-size: 18px;
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.arrow {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.78);
+  font-size: 27px;
+  line-height: 1;
+}
+
+
+/* INDIVIDUAL CARD COLORS */
+
+.card-about {
+  background: var(--about-soft);
+  border-color: #d5e0e2;
+}
+
+.card-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.card-navy .arrow {
+  color: var(--navy);
+}
+
+.card-green {
+  background: var(--green-soft);
+}
+
+.card-teal {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.card-teal .arrow {
+  color: var(--navy);
+}
+
+.card-connect {
+  background: var(--blue-soft);
+  border-color: #c5dce6;
+}
+
+
+/* ABOUT PAGE */
+
+.about-page {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 60px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-brand {
+  margin-bottom: 24px;
+}
+
+.about-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 26px;
+  padding: 18px;
+}
+
+.photo-frame {
+  width: 100%;
+  min-height: 330px;
+  border-radius: 11px;
+  overflow: hidden;
+  background: #e8eceb;
+  position: relative;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 4px;
+  color: var(--navy);
+}
+
+.photo-placeholder span {
+  font-weight: 700;
+}
+
+.photo-placeholder small {
+  font-size: 12px;
+}
+
+.about-copy {
+  padding: 3px 2px 2px;
+}
+
+.about-copy h1 {
+  font-size: 26px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--green);
+}
+
+.blank-copy {
+  min-height: 160px;
 }
 
 .about-copy p {
   font-size: 17px;
-  margin: 0 0 18px 0;
   line-height: 1.55;
+  margin: 0 0 18px;
 }
 
 .about-copy p:last-child {
   margin-bottom: 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .page {
+    width: calc(100% - 24px);
+    padding-top: 32px;
+  }
+
+  .m4-logo {
+    height: 82px;
+    line-height: 82px;
+  }
+
+  .m4-logo .m {
+    font-size: 91px;
+  }
+
+  .m4-logo .four {
+    font-size: 87px;
+  }
+
+  .wordmark {
+    font-size: 17px;
+  }
+
+  .card {
+    min-height: 96px;
+    grid-template-columns: 48px minmax(0, 1fr) 38px;
+    padding: 15px 12px;
+    gap: 10px;
+  }
+
+  .icon svg {
+    width: 37px;
+    height: 37px;
+  }
+
+  .text strong {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 11.5px;
+  }
+
+  .arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 23px;
+  }
+
+  .about-page {
+    width: calc(100% - 24px);
+    padding: 22px 0 44px;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .photo-frame {
+    min-height: auto;
+  }
+
+  .photo-frame img {
+    height: auto;
+    max-height: 470px;
+    object-fit: cover;
+  }
+
+  .about-copy h1 {
+    font-size: 22px;
+  }
+
+  .about-copy p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+}
+
+
+@media (max-width: 390px) {
+
+  .card {
+    grid-template-columns: 40px minmax(0, 1fr) 36px;
+  }
+
+  .icon svg {
+    width: 37px;
+    height: 37px;
+  }
+
+  .text strong {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 11.5px;
+  }
+
+  .arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 23px;
+  }
 }
